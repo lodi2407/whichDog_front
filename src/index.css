@@ -35,6 +35,14 @@ header h1 {
     font-size: xx-large;
     color: white;
 }
+header h1 button{
+    transform: scale(1);
+    transition: transform 0.5s;
+}
+header h1 button:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s;
+}
 header h1 a {
     text-decoration: none;
     color: white;
@@ -51,72 +59,90 @@ ul {
 
 
 /* home */
-#home {
-    height: 30rem;
-    background-image: url("../src/assets/home1.jpg");
-    background-size: cover;
-}
-#home h2 {
-    font-family: "AbrilFatface", serif;
+
+.find-my-dog-btn {
+    transform: scale(1);
+    transition: transform 0.2s, background-color 0.5s;
 }
 
-#img-left {
-    height: 30rem;
-    background-image: url("../src/assets/home2.jpg");
-    background-size: cover;
+.find-my-dog-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 0.13em dashed white;
+    border-radius: 5px;
+    animation: clippath 10s infinite linear;
 }
-#img-right {
-    height: 30rem;
-    background-image: url("../src/assets/home3.jpg");
-    background-size: cover;
+
+@keyframes clippath {
+    0%,
+    100% {
+        clip-path: inset(0 0 95% 0);
+    }
+    
+    25% {
+        clip-path: inset(0 95% 0 0);
+    }
+    50% {
+        clip-path: inset(95% 0 0 0);
+    }
+    75% {
+        clip-path: inset(0 0 0 95%);
+    }
+}
+
+.find-my-dog-btn:hover {
+    color: white;
+    background-color: black;
+    border: solid white 4px;
+    transform: scale(0.95);
+    transition: transform 0.2s, background-color 0.3s;
 }
 
 img {
     height: 18rem;
     width: 25rem;
+    z-index: 1;
 }
 
-/* img:hover {
-    transform: scale(0.90);
-} */
+.dog1, .dog3,.dog6, .dog8 {
+    background: 
+        linear-gradient(90deg, white 50%, transparent 0) repeat-x,
+        linear-gradient(90deg, white 50%, transparent 0) repeat-x,
+        linear-gradient(0deg, white 50%, transparent 0) repeat-y,
+        linear-gradient(0deg, white 50%, transparent 0) repeat-y;
+    background-position: 0 0, 0 100%, 0 0, 100% 0;
+    animation: linearGradientMove .8s infinite linear;
 
-.test {
-    background-color:white;
-    transform: rotate(30deg);
-    width: 600px;
-    height: 5px;
-    margin-left: 10rem;
-    margin-top: 1rem;
-    z-index: -1;
 }
 
-.test1 {
-    background-color:white;
-    transform: rotate(-28deg);
-    width: 600px;
-    height: 5px;
-    margin-left: -20rem;
-    z-index: -1;
+.dog1:hover, .dog3:hover,.dog6:hover, .dog8:hover {
+    animation: linearGradientMove .2s infinite linear;
+} 
+
+@keyframes linearGradientMove {
+    100% {
+        background-position: 8px 0, -8px 100%, 0 -8px, 100% 8px;
+    }
+}  
+
+.dog1 {
+    background-size: 0px 0px, 8px 2px, 0px 0px, 0px 0px;
 }
 
-.test2 {
-    background-color:white;
-    transform: rotate(155deg);
-    width: 600px;
-    height: 5px;
-    margin-top: -20rem;
-    margin-left: 15rem;
-    z-index: -1;
+.dog3 {
+    background-size: 0px 0px, 0px 0px, 2px 8px, 0px 0px;
 }
 
-.test3 {
-    background-color:white;
-    transform: rotate(30deg);
-    width: 600px;
-    height: 5px;
-    margin-top: -20rem;
-    margin-left: -25rem;
-    z-index: -1;
+.dog6 {
+    background-size: 0px 0px, 0px 0px, 0px 0px, 2px 8px;
+}
+
+.dog8 {
+    background-size: 8px 2px, 0px 0px, 0px 0px, 0px 0px;
 }
 
 /* Circle */
@@ -183,124 +209,17 @@ img {
 @keyframes mouving4 {
 	from {
 		transform: rotate(0deg)
-		           translate(-13px)
+		           translate(-11px)
 		           rotate(0deg);
 	}
 	to {
 		transform: rotate(-360deg)
-		           translate(-13px) 
+		           translate(-11px) 
 		           rotate(360deg);
 	}
 }
 
 /* hover image */ 
-
-.hovicon {
-    display: inline-block;
-    line-height: 90px;
-    cursor: pointer;
-    position: relative;
-    z-index: 1;
-    color: #fff;
+img:hover {
+    filter: brightness(1.2);
 }
-
-.hovicon:after {
-    pointer-events: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    content:'';
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-}
-.hovicon:before {
-    font-size: 48px;
-    line-height: 90px;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    display: block;
-    -webkit-font-smoothing: antialiased;
-}
-
-/* Effect 8 */
- .hovicon.effect-8 {
-    background: red;
-    -webkit-transition: -webkit-transform ease-out 0.1s, background 0.2s;
-    -moz-transition: -moz-transform ease-out 0.1s, background 0.2s;
-    transition: transform ease-out 0.1s, background 0.2s;
-}
-.hovicon.effect-8:after {
-    top: 0;
-    left: 0;
-    padding: 0;
-    z-index: -1;
-    box-shadow: 0 0 0 2px pink;
-    opacity: 0;
-    -webkit-transform: scale(0.9);
-    -moz-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    transform: scale(0.9);
-}
-.hovicon.effect-8:hover {
-    background: blue;
-    -webkit-transform: scale(0.93);
-    -moz-transform: scale(0.93);
-    -ms-transform: scale(0.93);
-    transform: scale(0.93);
-    color: #fff;
-}
-.hovicon.effect-8:hover i {
-    color: #fff;
-}
-.hovicon.effect-8:hover:after {
-    -webkit-animation: sonarEffect 1.3s ease-out 75ms;
-    -moz-animation: sonarEffect 1.3s ease-out 75ms;
-    animation: sonarEffect 1.3s ease-out 75ms;
-}
-@-webkit-keyframes sonarEffect {
-    0% {
-        opacity: 0.3;
-    }
-    40% {
-        opacity: 0.5;
-        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
-    }
-    100% {
-        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
-        -webkit-transform: scale(1.5);
-        opacity: 0;
-    }
-}
-@-moz-keyframes sonarEffect {
-    0% {
-        opacity: 0.3;
-    }
-    40% {
-        opacity: 0.5;
-        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
-    }
-    100% {
-        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
-        -moz-transform: scale(1.5);
-        opacity: 0;
-    }
-}
-@keyframes sonarEffect {
-    0% {
-        opacity: 0.3;
-    }
-    40% {
-        opacity: 0.5;
-        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
-    }
-    100% {
-        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
-        transform: scale(1.5);
-        opacity: 0;
-    }
-}
-
