@@ -7,7 +7,7 @@ export const HomeContent = () => {
   //https://codepen.io/lodi2407/pen/rNrKbwP
 
   return (
-    <div>
+    <div className='mx-auto'>
       <div id='homepage' className='grid grid-cols-3 grid-rows-3'>
         <div className='dog1 pl-36'>
           <img src='../src/assets/home2.jpg' className='circle c1' />
