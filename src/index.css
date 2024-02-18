@@ -16,11 +16,12 @@ html {
   margin: 0;
   padding: 0;
   background-color: black;
-  color: white;
+  color: white; 
 }
 
 body {
     margin: 0;
+    padding: 0;
     height: 100%;
 }
 
@@ -102,10 +103,14 @@ ul {
     transition: transform 0.2s, background-color 0.3s;
 }
 
-img {
-    height: 18rem;
-    width: 25rem;
-    z-index: 1;
+/* .home-img-dog {
+    height: 17rem;
+    width: 24rem;
+} */
+
+/* hover image */ 
+.home-img-dog:hover {
+    filter: brightness(1.2);
 }
 
 .dog1, .dog3,.dog6, .dog8 {
@@ -219,8 +224,5 @@ img {
 	}
 }
 
-/* hover image */ 
-img:hover {
-    filter: brightness(1.2);
-}
+
   
