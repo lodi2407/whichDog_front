@@ -230,5 +230,36 @@ ul {
 	}
 }
 
+/* dogs page */ 
 
+    /* description dialog */ 
+.modern-dialog {
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: #1e1e1e;
+    color: #ffffff;
+  }
   
+  .modern-dialog-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  
+  .modern-dialog-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #cccccc;
+  }
+  
+  .modern-dialog-button {
+    background: #007acc;
+    border-radius: 4px;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+  }
+  
+  .modern-dialog-button:hover {
+    background: #005fa3;
+  }
