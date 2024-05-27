@@ -232,6 +232,13 @@ ul {
 
 /* dogs page */ 
 
+    /* dog card */ 
+.card:hover {
+    box-shadow: 2px 2px 2px white;
+    border: solid 12px;
+    border-color: rgb(31 41 55 / var(--tw-border-opacity));
+    border-radius: 7%;
+}
     /* description dialog */ 
 .modern-dialog {
     border-radius: 8px;

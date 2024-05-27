@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { AllDogs } from '../../api/dogs';
 import { Dog } from '../types/type-dog';
-import { Button, Dialog, DialogBody, DialogFooter, Icon } from '@blueprintjs/core';
+import { Button, Card, Dialog, DialogBody, DialogFooter, Icon } from '@blueprintjs/core';
 import { useNavigate } from 'react-router-dom';
 
-export const DogCard = () => {
+export const DogsCards = () => {
   const navigate = useNavigate();
   const [dogs, setDogs] = useState<Dog[]>();
   const [isDogDialogOpen, setIsDogDialogOpen] = useState<boolean>(false);
@@ -30,7 +30,11 @@ export const DogCard = () => {
   return (
     <>
       {dogs?.map((dog: Dog) => (
-        <div key={dog.Id} className='max-w-xs mb-5 bg-white text-black rounded-xl'>
+        <div
+          key={dog.Id}
+          className='card max-w-xs mb-5 bg-white text-black rounded-xl border-gray-800 cursor-pointer'
+          onClick={() => navigate('/dog/' + dog.Id)}
+        >
           <img
             src={`../src/assets/dogs-content/${dog.breed.replace(/ /g, '').toLowerCase()}.jpg`}
             className='w-full rounded-xl'
@@ -53,13 +57,13 @@ export const DogCard = () => {
                 <span className='font-bold'>Description : </span>
                 {dog.description}
               </p>
-              <Icon icon='add' className='cursor-pointer' onClick={() => handleDogClicked(dog)} />
+              {/* <Icon icon='add' className='cursor-pointer' onClick={() => handleDogClicked(dog)} /> */}
             </div>
           </div>
         </div>
       ))}
 
-      <Dialog
+      {/* <Dialog
         isOpen={isDogDialogOpen}
         onClose={handleDogDialog}
         canOutsideClickClose={true}
@@ -76,7 +80,7 @@ export const DogCard = () => {
             <Button className='modern-dialog-button' text='Close' onClick={handleDogDialog} />
           }
         />
-      </Dialog>
+      </Dialog> */}
     </>
   );
 };

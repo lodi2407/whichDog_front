@@ -1,5 +1,5 @@
 import React from 'react';
-import { DogCard } from '../components/dog-card';
+import { DogsCards } from '../components/dog-card';
 import { Header } from '../components/header';
 
 export const FindMyDog = () => {
@@ -11,7 +11,7 @@ export const FindMyDog = () => {
         <div className='grid grid-cols-12 mx-10 mt-4'>
           <div className='col-span-3 border border-white mr-8 text-white'>Filters</div>
           <div className='col-span-9 flex-cards flex flex-row flex-wrap justify-between'>
-            <DogCard />
+            <DogsCards />
           </div>
         </div>
       </div>
