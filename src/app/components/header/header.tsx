@@ -13,10 +13,10 @@ export const Header = () => {
       </div>
       <nav className='col-span-2'>
         <ul className='flex flex-row justify-around'>
-          <li>
+          <li className='hover:text-[#F5CB5C]'>
             <button onClick={() => navigate('/dogs')}>Dogs</button>
           </li>
-          <li>
+          <li className='hover:text-[#F5CB5C]'>
             <button onClick={() => navigate('/aboutUs')}>About Us</button>
           </li>
         </ul>

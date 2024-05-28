@@ -32,7 +32,7 @@ export const DogsCards = () => {
       {dogs?.map((dog: Dog) => (
         <div
           key={dog.Id}
-          className='card max-w-xs mb-5 bg-white text-black rounded-xl border-gray-800 cursor-pointer'
+          className='dog-card max-w-xs mb-5 bg-white text-black rounded-xl cursor-pointer'
           onClick={() => navigate('/dog/' + dog.Id)}
         >
           <img

@@ -49,6 +49,7 @@ header h1 button{
 header h1 button:hover {
     transform: scale(1.1);
     transition: transform 0.5s;
+    color: #F5CB5C;
 }
 header h1 a {
     text-decoration: none;
@@ -63,7 +64,6 @@ header h1 a:hover {
 ul {
     color: white;
 }
-
 
 /* home */
 
@@ -233,12 +233,14 @@ ul {
 /* dogs page */ 
 
     /* dog card */ 
-.card:hover {
-    box-shadow: 2px 2px 2px white;
-    border: solid 12px;
-    border-color: rgb(31 41 55 / var(--tw-border-opacity));
-    border-radius: 7%;
+.dog-card:hover {
+    transform: scale(1.04, 1.04);
+    transition-duration: 180ms;
+    border: solid #F5CB5C 4px;
+    border-radius: 1rem;
+    background-color: #F5CB5C;
 }
+
     /* description dialog */ 
 .modern-dialog {
     border-radius: 8px;
