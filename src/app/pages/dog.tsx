@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 export const DogPage = () => {
   const { id } = useParams();
 
-  const [dog, setDog] = useState<Dog[]>();
+  const [dog, setDog] = useState<Dog>();
 
   useEffect(() => {
     try {
@@ -22,7 +22,7 @@ export const DogPage = () => {
       <Header />
       <div className='container mx-auto '>
         <p className='text-white'>Dog</p>
-        <p className='text-white'>{dog && dog[0]?.breed}</p>
+        <p className='text-white'>{dog && dog?.breed}</p>
       </div>
     </>
   );

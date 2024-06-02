@@ -12,7 +12,7 @@ export const AllDogs = async (): Promise<Dog[]> => {
   return await resp.json();
 };
 
-export const GetDog = async (id: string): Promise<Dog[]> => {
+export const GetDog = async (id: string): Promise<Dog> => {
   const resp = await fetch('/api/dogs/' + id, {
     method: 'GET',
   });
