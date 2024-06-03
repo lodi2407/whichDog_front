@@ -24,9 +24,7 @@ export const DogPage = () => {
       <div className='container mx-auto'>
         <div className='text-white flex justify-around m-8'>
           <div>
-            <CharacteristicHeader>
-              <p>Breed</p>
-            </CharacteristicHeader>
+            <CharacteristicHeader title='Breed' />
             <p>{dog?.breed}</p>
           </div>
           <div className='p-2 rounded-3xl border-8 border-double border-[#F5CB5C]'>
@@ -36,9 +34,7 @@ export const DogPage = () => {
             />
           </div>
           <div>
-            <CharacteristicHeader>
-              <p>Temperament</p>
-            </CharacteristicHeader>
+            <CharacteristicHeader title='Temperament' />
             <p>{dog?.temperament}</p>
           </div>
         </div>
