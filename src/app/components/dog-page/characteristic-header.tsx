@@ -1,3 +1,4 @@
+import { Icon } from '@blueprintjs/core';
 import React from 'react';
 
 interface charachteristicProps {
@@ -5,10 +6,12 @@ interface charachteristicProps {
 }
 
 export const CharacteristicHeader = ({ title }: charachteristicProps) => {
-  console.log(title);
   return (
-    <div className='text-center'>
-      <p className='w-80 text-black text-3xl font-bold bg-[#F5CB5C] rounded-xl mb-2'>{title}</p>
+    <div className='flex justify-between w-72 text-black text-2xl font-bold bg-[#F5CB5C] rounded-xl mb-2 pl-2'>
+      <p>{title}</p>
+      <p>
+        <Icon icon='dot' />
+      </p>
     </div>
   );
 };
