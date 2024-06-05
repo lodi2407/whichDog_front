@@ -38,19 +38,25 @@ export const DogPage = () => {
           <div>
             <CharacteristicHeader title='Breed' />
             <p className='mb-4 text-2xl text-center'>{dog?.breed}</p>
-            <CharacteristicHeader title='Popularity' />
-            <p className='mb-2'>{dog?.popularity}</p>
             <CharacteristicHeader title='Temperament' />
             <p className='mb-2'>{dog?.temperament}</p>
             <CharacteristicHeader title='Energy' />
             <p>{dog?.energyLevelCategory}</p>
+            <div>
+              <Icon icon='full-circle' size={15} className='pr-1' />
+              <Icon icon='full-circle' size={15} className='pr-1' />
+              <Icon icon='full-circle' size={15} className='pr-1' />
+              <Icon icon='full-circle' size={15} className='pr-1' />
+              <Icon icon='full-circle' size={15} className='pr-1' />
+            </div>
             <p className='mb-2'>{dog?.energyLevelValue}</p>
             <CharacteristicHeader title='Trainability' />
             <p>{dog?.trainabilityCategory}</p>
             <p className='mb-2'>{dog?.trainabilityValue}</p>
             <CharacteristicHeader title='Expectancy' />
-            <p>{dog?.minExpectancy}</p>
-            <p className='mb-2'>{dog?.maxExpectancy}</p>
+            <p>
+              {dog?.minExpectancy} - {dog?.maxExpectancy} years
+            </p>
           </div>
           <div className='h-1/2 p-2 rounded-3xl border-8 border-double border-[#F5CB5C]'>
             <img
@@ -65,11 +71,15 @@ export const DogPage = () => {
             <p>{dog?.groomingFrequencyCategory}</p>
             <p className='mb-2'>{dog?.groomingFrequencyValue}</p>
             <CharacteristicHeader title='Height' />
-            <p>{dog?.minHeight}</p>
-            <p className='mb-2'>{dog?.maxHeight}</p>
+            <p>
+              {dog?.minHeight && Math.round(dog.minHeight)} -
+              {dog?.maxHeight && Math.round(dog.maxHeight)} cm
+            </p>
             <CharacteristicHeader title='Weight' />
-            <p>{dog?.minWeight}</p>
-            <p className='mb-2'>{dog?.maxWeight}</p>
+            <p>
+              {dog?.minWeight && Math.round(dog.minWeight)} -
+              {dog?.maxWeight && Math.round(dog.maxWeight)} kg
+            </p>
             <CharacteristicHeader title='Shedding' />
             <p>{dog?.sheddingCategory}</p>
             <p className='mb-2'>{dog?.sheddingValue}</p>
