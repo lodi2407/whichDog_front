@@ -3,7 +3,7 @@ import { Header } from '../components/header';
 import { GetDog } from '../api/dogs';
 import { Dog } from '../components/types/type-dog';
 import { useNavigate, useParams } from 'react-router-dom';
-import { CharacteristicHeader } from '../components/dog-page/characteristic-header';
+import { Characteristic } from '../components/dog-page/characteristic';
 import { Icon } from '@blueprintjs/core';
 
 export const DogPage = () => {
@@ -34,29 +34,31 @@ export const DogPage = () => {
           </p>
         </div>
 
+        {/* left column */}
         <div className='w-3/4 mx-auto text-white flex flex-wrap justify-around m-8'>
           <div>
-            <CharacteristicHeader title='Breed' />
-            <p className='mb-4 text-2xl text-center'>{dog?.breed}</p>
-            <CharacteristicHeader title='Temperament' />
-            <p className='mb-2'>{dog?.temperament}</p>
-            <CharacteristicHeader title='Energy' />
-            <p>{dog?.energyLevelCategory}</p>
-            <div>
-              <Icon icon='full-circle' size={15} className='pr-1' />
-              <Icon icon='full-circle' size={15} className='pr-1' />
-              <Icon icon='full-circle' size={15} className='pr-1' />
-              <Icon icon='full-circle' size={15} className='pr-1' />
-              <Icon icon='full-circle' size={15} className='pr-1' />
-            </div>
-            <p className='mb-2'>{dog?.energyLevelValue}</p>
-            <CharacteristicHeader title='Trainability' />
-            <p>{dog?.trainabilityCategory}</p>
-            <p className='mb-2'>{dog?.trainabilityValue}</p>
-            <CharacteristicHeader title='Expectancy' />
-            <p>
+            <Characteristic
+              title='Breed'
+              characteristic={dog?.breed}
+              suppClass='!mb-4 !text-2xl text-bold text-center'
+            />
+            <Characteristic title='Temperament' characteristic={dog?.temperament} />
+            <Characteristic
+              title='Energy'
+              characteristic={dog?.energyLevelCategory}
+              value={dog?.energyLevelValue}
+            />
+            <Characteristic
+              title='Trainability'
+              characteristic={dog?.trainabilityCategory}
+              value={dog?.trainabilityValue}
+            />
+            <Characteristic title='Expectancy' />
+            <p className='mb-2 pl-2'>
               {dog?.minExpectancy} - {dog?.maxExpectancy} years
             </p>
+
+            {/* image */}
           </div>
           <div className='h-1/2 p-2 rounded-3xl border-8 border-double border-[#F5CB5C]'>
             <img
@@ -64,28 +66,39 @@ export const DogPage = () => {
               className='w-96 rounded-xl'
             />
           </div>
+
+          {/* right column */}
           <div>
-            <CharacteristicHeader title='Category' />
-            <p className='mb-4 text-2xl text-center'>{dog?.category}</p>
-            <CharacteristicHeader title='Grooming' />
-            <p>{dog?.groomingFrequencyCategory}</p>
-            <p className='mb-2'>{dog?.groomingFrequencyValue}</p>
-            <CharacteristicHeader title='Height' />
+            <Characteristic
+              title='Category'
+              characteristic={dog?.category}
+              suppClass='!mb-4 !text-2xl text-bold text-center'
+            />
+            <Characteristic
+              title='Grooming'
+              characteristic={dog?.groomingFrequencyCategory}
+              value={dog?.groomingFrequencyValue}
+            />
+            <Characteristic title='Height' />
             <p>
               {dog?.minHeight && Math.round(dog.minHeight)} -
               {dog?.maxHeight && Math.round(dog.maxHeight)} cm
             </p>
-            <CharacteristicHeader title='Weight' />
+            <Characteristic title='Weight' />
             <p>
               {dog?.minWeight && Math.round(dog.minWeight)} -
               {dog?.maxWeight && Math.round(dog.maxWeight)} kg
             </p>
-            <CharacteristicHeader title='Shedding' />
-            <p>{dog?.sheddingCategory}</p>
-            <p className='mb-2'>{dog?.sheddingValue}</p>
-            <CharacteristicHeader title='Demeanor' />
-            <p>{dog?.demeanorCategory}</p>
-            <p className='mb-2'>{dog?.demeanorValue}</p>
+            <Characteristic
+              title='Shedding'
+              characteristic={dog?.sheddingCategory}
+              value={dog?.sheddingValue}
+            />
+            <Characteristic
+              title='Demeanor'
+              characteristic={dog?.demeanorCategory}
+              value={dog?.sheddingValue}
+            />
           </div>
         </div>
 
