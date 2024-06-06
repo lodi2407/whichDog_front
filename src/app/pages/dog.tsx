@@ -34,9 +34,9 @@ export const DogPage = () => {
           </p>
         </div>
 
-        {/* left column */}
         <div className='w-3/4 mx-auto text-white flex flex-wrap justify-around m-8'>
-          <div>
+          {/* left column */}
+          <div className='mt-2'>
             <Characteristic
               title='Breed'
               characteristic={dog?.breed}
@@ -53,10 +53,6 @@ export const DogPage = () => {
               characteristic={dog?.trainabilityCategory}
               value={dog?.trainabilityValue}
             />
-            <Characteristic title='Expectancy' />
-            <p className='mb-2 pl-2'>
-              {dog?.minExpectancy} - {dog?.maxExpectancy} years
-            </p>
 
             {/* image */}
           </div>
@@ -68,7 +64,7 @@ export const DogPage = () => {
           </div>
 
           {/* right column */}
-          <div>
+          <div className='mt-2'>
             <Characteristic
               title='Category'
               characteristic={dog?.category}
@@ -79,16 +75,34 @@ export const DogPage = () => {
               characteristic={dog?.groomingFrequencyCategory}
               value={dog?.groomingFrequencyValue}
             />
-            <Characteristic title='Height' />
-            <p>
-              {dog?.minHeight && Math.round(dog.minHeight)} -
-              {dog?.maxHeight && Math.round(dog.maxHeight)} cm
-            </p>
-            <Characteristic title='Weight' />
-            <p>
-              {dog?.minWeight && Math.round(dog.minWeight)} -
-              {dog?.maxWeight && Math.round(dog.maxWeight)} kg
-            </p>
+            <Characteristic
+              title='Height'
+              characteristic={
+                Math.round(dog?.minHeight ?? 0).toString() +
+                ' - ' +
+                Math.round(dog?.maxHeight ?? 0).toString()
+              }
+              suppText='cm'
+              suppClass='pt-2'
+            />
+            <Characteristic
+              title='Weight'
+              characteristic={
+                Math.round(dog?.minWeight ?? 0).toString() +
+                ' - ' +
+                Math.round(dog?.maxWeight ?? 0).toString()
+              }
+              suppText='kg'
+              suppClass='pt-2'
+            />
+          </div>
+
+          <div className='w-full flex justify-between text-white mr-8 ml-8 mt-2'>
+            <Characteristic
+              title='Expectancy'
+              characteristic={dog?.minExpectancy + ' - ' + dog?.maxExpectancy}
+              suppText='years'
+            />
             <Characteristic
               title='Shedding'
               characteristic={dog?.sheddingCategory}

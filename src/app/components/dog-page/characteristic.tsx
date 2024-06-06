@@ -37,17 +37,17 @@ export const Characteristic = ({
   };
 
   return (
-    <>
+    <div>
       <div className='flex justify-between w-64 text-black text-2xl font-bold bg-[#F5CB5C] rounded-xl mb-2 pl-2'>
         <p>{title}</p>
         <p>
           <Icon icon='dot' />
         </p>
       </div>
-      <p className={suppClass + ' text-lg mb-2 pl-2'}>{characteristic}</p>
-      <p className='mb-4 pl-2'>
-        {value && circles(value)} {suppText}
+      <p className={suppClass + ' text-lg mb-2 pl-2'}>
+        {characteristic} {suppText}
       </p>
-    </>
+      <p className='mb-6 pl-2'>{value && circles(value)}</p>
+    </div>
   );
 };
