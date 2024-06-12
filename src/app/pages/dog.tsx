@@ -18,11 +18,12 @@ export const DogPage = () => {
     } catch (err) {
       console.log('Error while fetching dogs', err);
     }
-  }, []);
+  }, [id]);
 
   return (
     <>
       <Header />
+      {/* TODO: responsiveness */}
       <div className='container mx-auto'>
         <div className='h-3'>
           <p

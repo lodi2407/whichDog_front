@@ -289,3 +289,8 @@ ul {
   .modern-dialog-button:hover {
     background: #005fa3;
   }
+
+  .suggest {
+    max-height: 200px;
+    overflow-y: auto;
+  }
