@@ -34,7 +34,6 @@ export const Header = () => {
     );
   };
 
-  /* TODO: fix filtering */
   const filterDog: ItemPredicate<Dog> = (query, dog, _index, exactMatch) => {
     const normalizedTitle = dog.breed.toLowerCase();
     const normalizedQuery = query.toLowerCase();
@@ -42,7 +41,7 @@ export const Header = () => {
     if (exactMatch) {
       return normalizedTitle === normalizedQuery;
     } else {
-      return `${dog.breed}`.indexOf(normalizedQuery) >= 0;
+      return normalizedTitle.indexOf(normalizedQuery) >= 0;
     }
   };
 
